@@ -170,7 +170,7 @@ export const getPresignedURL = async (req: Request, res: Response) => {
     const { filename } = req.params;
     console.log(filename);
     const command = new PutObjectCommand({
-      Bucket: "ecomasis",
+      Bucket: "ecomautomationshub",
       Key: filename,
       ContentType: "application/pdf",
     });

@@ -172,7 +172,7 @@ const getPresignedURL = (req, res) => __awaiter(void 0, void 0, void 0, function
         const { filename } = req.params;
         console.log(filename);
         const command = new client_s3_1.PutObjectCommand({
-            Bucket: "ecomasis",
+            Bucket: "ecomautomationshub",
             Key: filename,
             ContentType: "application/pdf",
         });

@@ -14,7 +14,7 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
-// console.log("Origin", process.env.CLIENT_ENDPOINT);
+console.log("Origin", process.env.CLIENT_ENDPOINT);
 app.use((0, cors_1.default)({
     origin: process.env.CLIENT_ENDPOINT,
     credentials: true,
