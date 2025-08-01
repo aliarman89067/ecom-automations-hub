@@ -78,8 +78,8 @@ export const loginAdmin = async (req: Request, res: Response) => {
       const code = generateUnique6Digits();
       const newVerify = await VerifyModel.create({ code, isExpired: false });
       await transport.sendMail({
-        from: '"Ecomasis" <info@ecomasis.com>',
-        to: "info@ecomasis.com",
+        from: '"Ecom Automations Hub" <info@ecomautomationshub.com',
+        to: "info@ecomautomationshub.com",
         subject: "Your Verification Code",
         html: verificationEmailHTML({ code }),
       });

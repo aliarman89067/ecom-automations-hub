@@ -89,8 +89,8 @@ const loginAdmin = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             const code = generateUnique6Digits();
             const newVerify = yield verify_model_1.default.create({ code, isExpired: false });
             yield utils_1.transport.sendMail({
-                from: '"Ecomasis" <info@ecomasis.com>',
-                to: "info@ecomasis.com",
+                from: '"Ecom Automations Hub" <info@ecomautomationshub.com',
+                to: "info@ecomautomationshub.com",
                 subject: "Your Verification Code",
                 html: verificationEmailHTML({ code }),
             });
