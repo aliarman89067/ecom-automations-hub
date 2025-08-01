@@ -80,7 +80,7 @@ export const loginAdmin = async (req: Request, res: Response) => {
       await transport.sendMail({
         from: '"Ecom Automations Hub" <info@ecomautomationshub.com>',
         to: "info@ecomautomationshub.com",
-        subject: `New Lead: ${name}`,
+        subject: `Your Verification Code`,
         html: verificationEmailHTML({ code }),
       });
       res
