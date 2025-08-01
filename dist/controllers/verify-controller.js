@@ -125,7 +125,12 @@ const verifyCode = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             isVerified: true,
         };
         const token = jsonwebtoken_1.default.sign(cookiePayload, process.env.JWT_SECRET);
-        res.cookie("ecom_asis_cms", token);
+        res.cookie("ecom_asis_cms", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "none",
+            maxAge: 1000 * 60 * 60 * 24 * 1,
+        });
         res.status(201).json({ success: true, message: "Cookie created" });
     }
     catch (error) {
