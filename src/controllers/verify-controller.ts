@@ -11,7 +11,7 @@ const verificationEmailHTML = ({ code }: { code: string }) => {
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); overflow: hidden;">
           <tr>
             <td align="center" style="padding: 30px 0;">              
-             <img src="https://ecomasis.com/logo.png" alt="Logo" style="width: 150px; height:150px; object-fit: contain;" />
+             <img src="https://ecomautomationshub.com/logo.png" alt="Logo" style="width: 150px; height:150px; object-fit: contain;" />
             </td>
           </tr>
           <tr>
