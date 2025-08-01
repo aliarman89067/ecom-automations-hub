@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-// console.log("Origin", process.env.CLIENT_ENDPOINT);
+console.log("Origin", process.env.CLIENT_ENDPOINT);
 
 app.use(
   cors({
