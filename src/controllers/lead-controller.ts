@@ -62,7 +62,7 @@ export const generateLead = async (req: Request, res: Response) => {
       return;
     }
     await transport.sendMail({
-      from: '"Ecom Automations Hub" <info@ecomautomationshub.com',
+      from: '"Ecom Automations Hub" <info@ecomautomationshub.com>',
       to: "info@ecomautomationshub.com",
       subject: `New Lead: ${name}`,
       html: htmlContent({ name, email, contact, message }),

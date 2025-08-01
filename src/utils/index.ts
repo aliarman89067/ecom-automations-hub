@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import "dotenv/config";
 
 export const transport = nodemailer.createTransport({
   host: "smtp.hostinger.com",
