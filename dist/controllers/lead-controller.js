@@ -204,8 +204,8 @@ const sendPdf = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { fileUrl, id } = req.body;
     try {
         yield utils_1.transport.sendMail({
-            from: '"Ecomasis" <info@ecomasis.com>',
-            to: "info@ecomasis.com",
+            from: '"Ecom Automations Hub" <info@ecomautomationshub.com>',
+            to: "info@ecomautomationshub.com",
             subject: `New Contract`,
             html: htmlSendPDF({ name: "New Contract", linkUrl: fileUrl }),
         });

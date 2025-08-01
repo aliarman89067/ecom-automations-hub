@@ -203,8 +203,8 @@ export const sendPdf = async (req: Request, res: Response) => {
   const { fileUrl, id } = req.body;
   try {
     await transport.sendMail({
-      from: '"Ecomasis" <info@ecomasis.com>',
-      to: "info@ecomasis.com",
+      from: '"Ecom Automations Hub" <info@ecomautomationshub.com>',
+      to: "info@ecomautomationshub.com",
       subject: `New Contract`,
       html: htmlSendPDF({ name: "New Contract", linkUrl: fileUrl }),
     });
