@@ -112,6 +112,9 @@ export const verifyCode = async (req: Request, res: Response) => {
       isVerified: true,
     };
     const token = jwt.sign(cookiePayload, process.env.JWT_SECRET!);
+    // Dev
+    // res.cookie("ecom_asis_cms", token);
+    // Prod
     res.cookie("ecom_asis_cms", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",

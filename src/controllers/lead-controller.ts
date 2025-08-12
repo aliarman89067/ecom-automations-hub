@@ -18,11 +18,13 @@ const htmlContent = ({
   email,
   contact,
   message,
+  pageName,
 }: {
   name: string;
   email: string;
   contact: string;
   message: string;
+  pageName: string;
 }) => `
   <div style="font-family: 'Segoe UI', sans-serif; color: #333; max-width: 600px; margin: auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
     <div style="background-color: #4CAF50; color: white; padding: 20px; text-align: center;">
@@ -48,6 +50,10 @@ const htmlContent = ({
           <td style="padding: 10px; font-weight: bold; background-color: #f9f9f9;">Message:</td>
           <td style="padding: 10px;">${message}</td>
         </tr>
+        <tr>
+          <td style="padding: 10px; font-weight: bold; background-color: #f9f9f9;">Page:</td>
+          <td style="padding: 10px;">${pageName}</td>
+        </tr>
       </table>
 
     </div>
@@ -56,7 +62,7 @@ const htmlContent = ({
 
 export const generateLead = async (req: Request, res: Response) => {
   try {
-    const { name, email, contact, message } = req.body;
+    const { name, email, contact, message, pageName } = req.body;
     if (!name || !email || !contact || !message) {
       res.status(404).json({ message: "Request body is not correct" });
       return;
@@ -65,7 +71,7 @@ export const generateLead = async (req: Request, res: Response) => {
       from: '"Ecom Automations Hub" <info@ecomautomationshub.com>',
       to: "info@ecomautomationshub.com",
       subject: `New Lead: ${name}`,
-      html: htmlContent({ name, email, contact, message }),
+      html: htmlContent({ name, email, contact, message, pageName }),
     });
 
     res.status(201).json({ message: "Email send successfully" });
