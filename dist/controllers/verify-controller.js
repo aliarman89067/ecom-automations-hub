@@ -125,6 +125,9 @@ const verifyCode = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             isVerified: true,
         };
         const token = jsonwebtoken_1.default.sign(cookiePayload, process.env.JWT_SECRET);
+        // Dev
+        // res.cookie("ecom_asis_cms", token);
+        // Prod
         res.cookie("ecom_asis_cms", token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
